@@ -970,6 +970,9 @@ pokemonSixBar.addEventListener(`click`, dropAssignSix);
 // dynamic filter functions
 
 pokemonOneBar.addEventListener(`keyup`, (e) => {
+    if (!dropDown.classList.contains(`show`)){
+        dropDown.classList.add(`show`)
+    }
     const searchString = e.target.value.toLowerCase();
     console.log(e)
     const filteredPokemon = pokemonList.filter((pokemon) => {
@@ -979,6 +982,9 @@ pokemonOneBar.addEventListener(`keyup`, (e) => {
 });
 
 pokemonTwoBar.addEventListener(`keyup`, (e) => {
+    if (!dropDown.classList.contains(`show`)){
+        dropDown.classList.add(`show`)
+    }
     const searchString = e.target.value.toLowerCase();
     console.log(e)
     const filteredPokemon = pokemonList.filter((pokemon) => {
@@ -988,6 +994,9 @@ pokemonTwoBar.addEventListener(`keyup`, (e) => {
 });
 
 pokemonThreeBar.addEventListener(`keyup`, (e) => {
+    if (!dropDown.classList.contains(`show`)){
+        dropDown.classList.add(`show`)
+    }
     const searchString = e.target.value.toLowerCase();
     console.log(e)
     const filteredPokemon = pokemonList.filter((pokemon) => {
@@ -997,6 +1006,9 @@ pokemonThreeBar.addEventListener(`keyup`, (e) => {
 });
 
 pokemonFourBar.addEventListener(`keyup`, (e) => {
+    if (!dropDown.classList.contains(`show`)){
+        dropDown.classList.add(`show`)
+    }
     const searchString = e.target.value.toLowerCase();
     console.log(e)
     const filteredPokemon = pokemonList.filter((pokemon) => {
@@ -1006,6 +1018,9 @@ pokemonFourBar.addEventListener(`keyup`, (e) => {
 });
 
 pokemonFiveBar.addEventListener(`keyup`, (e) => {
+    if (!dropDown.classList.contains(`show`)){
+        dropDown.classList.add(`show`)
+    }
     const searchString = e.target.value.toLowerCase();
     console.log(e)
     const filteredPokemon = pokemonList.filter((pokemon) => {
@@ -1015,6 +1030,9 @@ pokemonFiveBar.addEventListener(`keyup`, (e) => {
 });
 
 pokemonSixBar.addEventListener(`keyup`, (e) => {
+    if (!dropDown.classList.contains(`show`)){
+        dropDown.classList.add(`show`)
+    }
     const searchString = e.target.value.toLowerCase();
     console.log(e)
     const filteredPokemon = pokemonList.filter((pokemon) => {
@@ -1045,7 +1063,7 @@ function showDropdownMenu() {
 
 const displayedPokemon = (pokemon) => {
     const pokemonString = pokemon.map((pokemon) => {
-        return `<a href="#" class="searchedPokemon">${pokemon.name}</a>`;
+        return `<a href="#" class="dropdown-item">${pokemon.name}</a>`;
     })
     .join(` `);
     dropDown.innerHTML = pokemonString
@@ -1094,37 +1112,37 @@ function dropAssignSix (event) {
 //fill in on click
 
 $(function(){
-    $('#myDropdown1').on('click', '.searchedPokemon', function() {
+    $('#myDropdown1').on('click', '.dropdown-item', function() {
         $("#pokemonOneInputBar").val($(this).html());
     });
 });
 
 $(function(){
-    $('#myDropdown2').on('click', '.searchedPokemon', function() {
+    $('#myDropdown2').on('click', '.dropdown-item', function() {
         $("#pokemonTwoInputBar").val($(this).html());
     });
 });
 
 $(function(){
-    $('#myDropdown3').on('click', '.searchedPokemon', function() {
+    $('#myDropdown3').on('click', '.dropdown-item', function() {
         $("#pokemonThreeInputBar").val($(this).html());
     });
 });
 
 $(function(){
-    $('#myDropdown4').on('click', '.searchedPokemon', function() {
+    $('#myDropdown4').on('click', '.dropdown-item', function() {
         $("#pokemonFourInputBar").val($(this).html());
     });
 });
 
 $(function(){
-    $('#myDropdown5').on('click', '.searchedPokemon', function() {
+    $('#myDropdown5').on('click', '.dropdown-item', function() {
         $("#pokemonFiveInputBar").val($(this).html());
     });
 });
 
 $(function(){
-    $('#myDropdown6').on('click', '.searchedPokemon', function() {
+    $('#myDropdown6').on('click', '.dropdown-item', function() {
         $("#pokemonSixInputBar").val($(this).html());
     });
 });

@@ -2,13 +2,18 @@ body {
     min-height: 100vh;
     font-family: sans-serif;
     width: 100vw;
+    background-color: ;
+}
 
+h1 {
+    text-align: center;
 }
 
 .main {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    background-color: none;
 }
 
 .child {
@@ -16,7 +21,9 @@ body {
     flex-basis: 25%;
     margin: 20px 30px 10px 30px;
     height: 200px;
-    background-color: grey;
+    background-image: url("./art/choice.jpg");
+    background-size: cover;
+    background-color: #cccccc;
 }
 
 .grandchild {
@@ -51,12 +58,11 @@ form {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    max-width: 187px;
+    width: 175px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    margin-left: 2.2%;
+    margin-left: 0.70%;
     max-height: 150px;
     overflow: auto;
-    z-index: 90;
 }
 
 .dropdown a {
@@ -64,9 +70,18 @@ form {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-
 }
 
 .show {
     display:block;
 }
+
+.calculator {
+    text-align: center;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
