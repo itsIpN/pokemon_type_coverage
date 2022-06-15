@@ -7,50 +7,80 @@
     <link rel="stylesheet" href="./style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script defer src="./script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <section>
-        <form id="pokemonOne">
-            <input type="text" name="pokemonOneInputBar" value="" placeholder="Enter text here"  id="pokemonOneInputBar">
-            <input type="submit" name = "pokemonOneSubmitButton" value="Click here" id="pokemonOneSearchButton">
-        </form>
-        <ul id="pokemonOneType"></ul>
-    </section>
-    <section>
-        <form id="pokemonTwo">
-            <input type="text" name="pokemonTwoInputBar" value="" placeholder="Enter text here"  id="pokemonTwoInputBar">
-            <input type="submit" name = "pokemonTwoSubmitButton" value="Click here" id="pokemonTwoSearchButton">
-        </form>
-        <ul id="pokemonTwoType"></ul>
-    </section>
-    <section>
-        <form id="pokemonThree">
-            <input type="text" name="pokemonThreeInputBar" value="" placeholder="Enter text here"  id="pokemonThreeInputBar">
-            <input type="submit" name = "pokemonThreeSubmitButton" value="Click here" id="pokemonThreeSearchButton">
-        </form>
-        <ul id="pokemonThreeType"></ul>
-    </section>
-    <section>
-        <form id="pokemonFour">
-            <input type="text" name="pokemonFourInputBar" value="" placeholder="Enter text here"  id="pokemonFourInputBar">
-            <input type="submit" name = "pokemonFourSubmitButton" value="Click here" id="pokemonFourSearchButton">
-        </form>
-        <ul id="pokemonFourType"></ul>
-    </section>
-    <section>
-        <form id="pokemonFive">
-            <input type="text" name="pokemonFiveInputBar" value="" placeholder="Enter text here"  id="pokemonFiveInputBar">
-            <input type="submit" name = "pokemonFiveSubmitButton" value="Click here" id="pokemonFiveSearchButton">
-        </form>
-        <ul id="pokemonFiveType"></ul>
-    </section>
-    <section>
-        <form id="pokemonSix">
-            <input type="text" name="pokemonSixInputBar" value="" placeholder="Enter text here"  id="pokemonSixInputBar">
-            <input type="submit" name = "pokemonSixSubmitButton" value="Click here" id="pokemonSixSearchButton">
-        </form>
-        <ul id="pokemonSixType"></ul>
+    <section class="card">
+        <div class="main">
+            <div class="child">
+                <form id="pokemonOne">
+                    <input type="text" name="pokemonOneInputBar" value="" placeholder="Enter text here"  id="pokemonOneInputBar" autocomplete="off">
+                    <input type="submit" name = "pokemonOneSubmitButton" value="Submit" id="pokemonOneSearchButton">
+                </form>
+                <div id="myDropdown1" class="dropdown-content1 dropdown">
+                </div>
+                <div class="grandchild">
+                    <img src="" alt="" id="pokemonOneSprite" class="pokemonPic">
+                    <ul id="pokemonOneType"></ul>
+                </div>
+            </div>
+            <div class="child">
+                <form id="pokemonTwo">
+                    <input type="text" name="pokemonTwoInputBar" value="" placeholder="Enter text here"  id="pokemonTwoInputBar" autocomplete="off">
+                    <input type="submit" name = "pokemonTwoSubmitButton" value="Submit" id="pokemonTwoSearchButton">
+                </form>
+                <div id="myDropdown2" class="dropdown-content2 dropdown"></div>
+                <div class="grandchild">
+                    <img src="" alt="" id="pokemonTwoSprite" class="pokemonPic">
+                    <ul id="pokemonTwoType"></ul>
+                </div>
+            </div>
+            <div class="child">
+                <form id="pokemonThree">
+                    <input type="text" name="pokemonThreeInputBar" value="" placeholder="Enter text here"  id="pokemonThreeInputBar" autocomplete="off">
+                    <input type="submit" name = "pokemonThreeSubmitButton" value="Submit" id="pokemonThreeSearchButton">
+                </form>
+                <div id="myDropdown3" class="dropdown-content3 dropdown"></div>
+                <div class="grandchild">
+                    <img src="" alt="" id="pokemonThreeSprite" class="pokemonPic">
+                    <ul id="pokemonThreeType"></ul>
+                </div>
+            </div>
+            <div class="child">
+                <form id="pokemonFour">
+                    <input type="text" name="pokemonFourInputBar" value="" placeholder="Enter text here"  id="pokemonFourInputBar" autocomplete="off">
+                    <input type="submit" name = "pokemonFourSubmitButton" value="Submit" id="pokemonFourSearchButton">
+                </form>
+                <div id="myDropdown4" class="dropdown-content4 dropdown"></div>
+                <div class="grandchild">
+                    <img src="" alt="" id="pokemonFourSprite" class="pokemonPic">
+                    <ul id="pokemonFourType"></ul>
+                </div>
+            </div>
+            <div class="child">
+                <form id="pokemonFive">
+                    <input type="text" name="pokemonFiveInputBar" value="" placeholder="Enter text here"  id="pokemonFiveInputBar" autocomplete="off">
+                    <input type="submit" name = "pokemonFiveSubmitButton" value="Submit" id="pokemonFiveSearchButton">
+                </form>
+                <div id="myDropdown5" class="dropdown-content5 dropdown"></div>
+                <div class="grandchild">
+                    <img src="" alt="" id="pokemonFiveSprite" class="pokemonPic">
+                    <ul id="pokemonFiveType"></ul>
+                </div>
+            </div>
+            <div class="child">
+                <form id="pokemonSix">
+                    <input type="text" name="pokemonSixInputBar" value="" placeholder="Enter text here"  id="pokemonSixInputBar" autocomplete="off">
+                    <input type="submit" name = "pokemonSixSubmitButton" value="Submit" id="pokemonSixSearchButton">
+                </form>
+                <div id="myDropdown6" class="dropdown-content6 dropdown"></div>
+                <div class="grandchild">
+                    <img src="" alt="" id="pokemonSixSprite" class="pokemonPic">
+                    <ul id="pokemonSixType"></ul>
+                </div>
+            </div>
+        </div>
     </section>
     <section>
         <button type="button" id="calculateCoverage">Test Coverage!</button>

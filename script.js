@@ -1,4 +1,6 @@
-/* const url = `https://pokeapi.co/api/v2/pokemon-species/?limit=898`
+const url = `https://pokeapi.co/api/v2/pokemon/?limit=1126`
+
+let pokemonList = [];
 
 fetch(url)
   .then(res => {
@@ -6,34 +8,35 @@ fetch(url)
     return res.json();
   })
   .then(res => {
-      let pokemonList = res.results;
+      pokemonList.push(...res.results);
       console.log(pokemonList);
   })
   .catch(err => {
     console.log(`something went wrong...`, err);
-  }); */
+  }); 
 
 
 
 
-// searched pokemon weaknesses & resistance
+// searched pokemon weaknesses & resistance & type
 
 class Pokemon {
-    constructor(weakness, resistance, immunity) {
+    constructor(weakness, resistance, immunity, type) {
         this.weakness = weakness;
         this.resistance = resistance;
         this.immunity = immunity;
+        this.type = type;
     }
 }
 
-let pokemon = new Pokemon([],[],[]);
+let pokemon = new Pokemon([],[],[],[]);
 
-let pokemonOne = new Pokemon([],[],[]);
-let pokemonTwo = new Pokemon([],[],[]);
-let pokemonThree = new Pokemon([],[],[]);
-let pokemonFour = new Pokemon([],[],[]);
-let pokemonFive = new Pokemon([],[],[]);
-let pokemonSix = new Pokemon([],[],[]);
+let pokemonOne = new Pokemon([],[],[],[]);
+let pokemonTwo = new Pokemon([],[],[],[]);
+let pokemonThree = new Pokemon([],[],[],[]);
+let pokemonFour = new Pokemon([],[],[],[]);
+let pokemonFive = new Pokemon([],[],[],[]);
+let pokemonSix = new Pokemon([],[],[],[]);
 
 
 
@@ -746,42 +749,53 @@ function pokemonData () {
     let url = "https://pokeapi.co/api/v2/pokemon/"
     let textInput = ``;
     let data = ``;
+    let picture = ``;
     if (assigned == 1) {
         textInput = document.querySelector(`#pokemonOneInputBar`).value;
         data = document.getElementById(`pokemonOneType`);
+        picture = document.getElementById(`pokemonOneSprite`);
     }
     else if (assigned == 2) {
         textInput = document.querySelector(`#pokemonTwoInputBar`).value;
         data = document.getElementById(`pokemonTwoType`);
+        picture = document.getElementById(`pokemonTwoSprite`);
     }
     else if (assigned == 3) {
         textInput = document.querySelector(`#pokemonThreeInputBar`).value;
-        data = document.getElementById(`pokemonThreeType`);      
+        data = document.getElementById(`pokemonThreeType`);   
+        picture = document.getElementById(`pokemonThreeSprite`);   
     }
     else if (assigned == 4) {
         textInput = document.querySelector(`#pokemonFourInputBar`).value;
-        data = document.getElementById(`pokemonFourType`);        
+        data = document.getElementById(`pokemonFourType`);    
+        picture = document.getElementById(`pokemonFourSprite`);    
     }
     else if (assigned == 5) {
         textInput = document.querySelector(`#pokemonFiveInputBar`).value;
-        data = document.getElementById(`pokemonFiveType`);       
+        data = document.getElementById(`pokemonFiveType`);      
+        picture = document.getElementById(`pokemonFiveSprite`); 
     }
     else if (assigned == 6) {
         textInput = document.querySelector(`#pokemonSixInputBar`).value;
-        data = document.getElementById(`pokemonSixType`);      
+        data = document.getElementById(`pokemonSixType`);    
+        picture = document.getElementById(`pokemonSixSprite`);  
     }
     data.innerHTML = ``;
+    picture.src = ``;
+    picture.alt = ``;
     url += textInput;
     console.log(url);
     pokemon.weakness = [];
     pokemon.resistance = [];
     pokemon.immunity = [];
+    pokemon.type = [];
     fetch(url)
         .then(res => res.json())
         .then(res => {
             let types = res.types;
             for(let i = 0; i < types.length; i++) {
                 typeChecker(types[i].type.name);
+                pokemon.type.push(types[i].type.name);
             
             }
 
@@ -800,53 +814,69 @@ function pokemonData () {
                 pokemonOne.weakness.length = 0;
                 pokemonOne.resistance.length = 0;
                 pokemonOne.immunity.length = 0;
+                pokemonOne.type.length = 0;
                 pokemonOne.weakness.push(...uniquePokemonWeaknessImmune);
                 pokemonOne.resistance.push(...uniquePokemonResistanceImmune);
                 pokemonOne.immunity.push(...pokemon.immunity);
+                pokemonOne.type.push(...pokemon.type);
             }
             else if (assigned == 2) {
                 pokemonTwo.weakness.length = 0;
                 pokemonTwo.resistance.length = 0;
                 pokemonTwo.immunity.length = 0;
+                pokemonTwo.type.length = 0;
                 pokemonTwo.weakness.push(...uniquePokemonWeaknessImmune);
                 pokemonTwo.resistance.push(...uniquePokemonResistanceImmune);
                 pokemonTwo.immunity.push(...pokemon.immunity);
+                pokemonTwo.type.push(...pokemon.type);
             }
             else if (assigned == 3) {
                 pokemonThree.weakness.length = 0;
                 pokemonThree.resistance.length = 0;
                 pokemonThree.immunity.length = 0;
+                pokemonThree.type.length = 0;
                 pokemonThree.weakness.push(...uniquePokemonWeaknessImmune);
                 pokemonThree.resistance.push(...uniquePokemonResistanceImmune);
-                pokemonThree.immunity.push(...pokemon.immunity);      
+                pokemonThree.immunity.push(...pokemon.immunity);
+                pokemonThree.type.push(...pokemon.type);     
             }
             else if (assigned == 4) {
                 pokemonFour.weakness.length = 0;
                 pokemonFour.resistance.length = 0;
                 pokemonFour.immunity.length = 0;
+                pokemonFour.type.length = 0;
                 pokemonFour.weakness.push(...uniquePokemonWeaknessImmune);
                 pokemonFour.resistance.push(...uniquePokemonResistanceImmune);
-                pokemonFour.immunity.push(...pokemon.immunity);       
+                pokemonFour.immunity.push(...pokemon.immunity);
+                pokemonFour.type.push(...pokemon.type);      
             }
             else if (assigned == 5) {
                 pokemonFive.weakness.length = 0;
                 pokemonFive.resistance.length = 0;
                 pokemonFive.immunity.length = 0;
+                pokemonFive.type.length = 0;
                 pokemonFive.weakness.push(...uniquePokemonWeaknessImmune);
                 pokemonFive.resistance.push(...uniquePokemonResistanceImmune);
-                pokemonFive.immunity.push(...pokemon.immunity);            }
+                pokemonFive.immunity.push(...pokemon.immunity);
+                pokemonFive.type.push(...pokemon.type);           
+            }
             else if (assigned == 6) {
                 pokemonSix.weakness.length = 0;
                 pokemonSix.resistance.length = 0;
                 pokemonSix.immunity.length = 0;
+                pokemonSix.type.length = 0;
                 pokemonSix.weakness.push(...uniquePokemonWeaknessImmune);
                 pokemonSix.resistance.push(...uniquePokemonResistanceImmune);
-                pokemonSix.immunity.push(...pokemon.immunity);            }
-            for (let j = 0; j < uniquePokemonWeaknessImmune.length; j++) {
+                pokemonSix.immunity.push(...pokemon.immunity);            
+                pokemonSix.type.push(...pokemon.type);
+            }
+            for (let j = 0; j < pokemon.type.length; j++) {
                 let list = document.createElement(`li`);
-                list.innerHTML = uniquePokemonWeaknessImmune[j]
+                list.innerHTML = `<img src="./art/${pokemon.type[j]}.png" alt="${pokemon.type[j]}" class="typePic">`
                 data.appendChild(list)
             }
+            picture.alt = textInput;
+            picture.src = res.sprites.other[`official-artwork`].front_default;
         })
         .catch(err => console.log(`something went wrong...`, err))
         .finally(() => console.log("request was made!"));
@@ -912,10 +942,250 @@ function assignerSix (event) {
 
 
 // event listeners
-pokemonOneForm.addEventListener(`submit`, assignerOne)
-pokemonTwoForm.addEventListener(`submit`, assignerTwo)
-pokemonThreeForm.addEventListener(`submit`, assignerThree)
-pokemonFourForm.addEventListener(`submit`, assignerFour)
-pokemonFiveForm.addEventListener(`submit`, assignerFive)
-pokemonSixForm.addEventListener(`submit`, assignerSix)
-coverageButton.addEventListener(`click`, calculateCoverage)
+pokemonOneForm.addEventListener(`submit`, assignerOne);
+pokemonTwoForm.addEventListener(`submit`, assignerTwo);
+pokemonThreeForm.addEventListener(`submit`, assignerThree);
+pokemonFourForm.addEventListener(`submit`, assignerFour);
+pokemonFiveForm.addEventListener(`submit`, assignerFive);
+pokemonSixForm.addEventListener(`submit`, assignerSix);
+coverageButton.addEventListener(`click`, calculateCoverage);
+
+// input bar variable + listeners
+
+let pokemonOneBar = document.querySelector(`#pokemonOneInputBar`);
+let pokemonTwoBar = document.querySelector(`#pokemonTwoInputBar`);
+let pokemonThreeBar = document.querySelector(`#pokemonThreeInputBar`);
+let pokemonFourBar = document.querySelector(`#pokemonFourInputBar`);
+let pokemonFiveBar = document.querySelector(`#pokemonFiveInputBar`);
+let pokemonSixBar = document.querySelector(`#pokemonSixInputBar`);
+
+pokemonOneBar.addEventListener(`click`, dropAssignOne);
+pokemonTwoBar.addEventListener(`click`, dropAssignTwo);
+pokemonThreeBar.addEventListener(`click`, dropAssignThree);
+pokemonFourBar.addEventListener(`click`, dropAssignFour);
+pokemonFiveBar.addEventListener(`click`, dropAssignFive);
+pokemonSixBar.addEventListener(`click`, dropAssignSix);
+
+
+// dynamic filter functions
+
+pokemonOneBar.addEventListener(`keyup`, (e) => {
+    const searchString = e.target.value.toLowerCase();
+    console.log(e)
+    const filteredPokemon = pokemonList.filter((pokemon) => {
+        return (pokemon.name.toLowerCase().includes(searchString));
+    });
+    displayedPokemon(filteredPokemon);
+});
+
+pokemonTwoBar.addEventListener(`keyup`, (e) => {
+    const searchString = e.target.value.toLowerCase();
+    console.log(e)
+    const filteredPokemon = pokemonList.filter((pokemon) => {
+        return (pokemon.name.toLowerCase().includes(searchString));
+    });
+    displayedPokemon(filteredPokemon);
+});
+
+pokemonThreeBar.addEventListener(`keyup`, (e) => {
+    const searchString = e.target.value.toLowerCase();
+    console.log(e)
+    const filteredPokemon = pokemonList.filter((pokemon) => {
+        return (pokemon.name.toLowerCase().includes(searchString));
+    });
+    displayedPokemon(filteredPokemon);
+});
+
+pokemonFourBar.addEventListener(`keyup`, (e) => {
+    const searchString = e.target.value.toLowerCase();
+    console.log(e)
+    const filteredPokemon = pokemonList.filter((pokemon) => {
+        return (pokemon.name.toLowerCase().includes(searchString));
+    });
+    displayedPokemon(filteredPokemon);
+});
+
+pokemonFiveBar.addEventListener(`keyup`, (e) => {
+    const searchString = e.target.value.toLowerCase();
+    console.log(e)
+    const filteredPokemon = pokemonList.filter((pokemon) => {
+        return (pokemon.name.toLowerCase().includes(searchString));
+    });
+    displayedPokemon(filteredPokemon);
+});
+
+pokemonSixBar.addEventListener(`keyup`, (e) => {
+    const searchString = e.target.value.toLowerCase();
+    console.log(e)
+    const filteredPokemon = pokemonList.filter((pokemon) => {
+        return (pokemon.name.toLowerCase().includes(searchString));
+    });
+    displayedPokemon(filteredPokemon);
+});
+
+//dropdowns
+
+
+
+let dropDown = ``;
+
+let dropDown1 = document.querySelector(`#myDropdown1`);
+let dropDown2 = document.querySelector(`#myDropdown2`);
+let dropDown3 = document.querySelector(`#myDropdown3`);
+let dropDown4 = document.querySelector(`#myDropdown4`);
+let dropDown5 = document.querySelector(`#myDropdown5`);
+let dropDown6 = document.querySelector(`#myDropdown6`);
+
+
+
+function showDropdownMenu() {
+    displayedPokemon(pokemonList)
+    dropDown.classList.toggle("show");
+}
+
+const displayedPokemon = (pokemon) => {
+    const pokemonString = pokemon.map((pokemon) => {
+        return `<a href="#" class="searchedPokemon">${pokemon.name}</a>`;
+    })
+    .join(` `);
+    dropDown.innerHTML = pokemonString
+}
+
+//dropdown assigner
+
+
+
+function dropAssignOne (event) {
+    event.preventDefault()
+    dropDown = dropDown1
+    showDropdownMenu()
+}
+
+function dropAssignTwo (event) {
+    event.preventDefault()
+    dropDown = dropDown2
+    showDropdownMenu()
+}
+
+function dropAssignThree (event) {
+    event.preventDefault()
+    dropDown = dropDown3
+    showDropdownMenu()
+}
+
+function dropAssignFour (event) {
+    event.preventDefault()
+    dropDown = dropDown4
+    showDropdownMenu()
+}
+
+function dropAssignFive (event) {
+    event.preventDefault()
+    dropDown = dropDown5
+    showDropdownMenu()
+}
+
+function dropAssignSix (event) {
+    event.preventDefault()
+    dropDown = dropDown6
+    showDropdownMenu()
+}
+
+//fill in on click
+
+$(function(){
+    $('#myDropdown1').on('click', '.searchedPokemon', function() {
+        $("#pokemonOneInputBar").val($(this).html());
+    });
+});
+
+$(function(){
+    $('#myDropdown2').on('click', '.searchedPokemon', function() {
+        $("#pokemonTwoInputBar").val($(this).html());
+    });
+});
+
+$(function(){
+    $('#myDropdown3').on('click', '.searchedPokemon', function() {
+        $("#pokemonThreeInputBar").val($(this).html());
+    });
+});
+
+$(function(){
+    $('#myDropdown4').on('click', '.searchedPokemon', function() {
+        $("#pokemonFourInputBar").val($(this).html());
+    });
+});
+
+$(function(){
+    $('#myDropdown5').on('click', '.searchedPokemon', function() {
+        $("#pokemonFiveInputBar").val($(this).html());
+    });
+});
+
+$(function(){
+    $('#myDropdown6').on('click', '.searchedPokemon', function() {
+        $("#pokemonSixInputBar").val($(this).html());
+    });
+});
+
+// close dropdown
+
+window.onclick = function(event) {
+    if (!event.target.matches('#pokemonOneInputBar')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content1");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    } if (!event.target.matches('#pokemonTwoInputBar')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content2");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      } if (!event.target.matches('#pokemonThreeInputBar')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content3");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      } if (!event.target.matches('#pokemonFourInputBar')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content4");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      } if (!event.target.matches('#pokemonFiveInputBar')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content5");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      } if (!event.target.matches('#pokemonSixInputBar')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content6");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+  }
+
