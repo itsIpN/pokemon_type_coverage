@@ -2373,4 +2373,3 @@ pokemonSixMoveFourBar.addEventListener(`keyup`, (e) => {
     moveList(filteredMoves);
 });
 
-fitty(`.dropdown-item`)
