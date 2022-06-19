@@ -20,7 +20,6 @@ Description: a basic pokemon team builder that allows you to select 6 pokemon fo
 [Click here](https://pokemon-team-type-coverage-evaluator.netlify.app/) to try it out!
 
 # Future Enhancements
-- Capitalize all first letters and replace hyphens with spaces
 - Evaluate move types and show what type of moves are lacking for attacking type coverage
 - Use abilities as part of evaluation of type coverage (immunity)
 - Allow addition of items

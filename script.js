@@ -784,7 +784,7 @@ function pokemonData () {
     data.innerHTML = ``;
     picture.src = ``;
     picture.alt = ``;
-    url += textInput;
+    url += textInput.toLowerCase();
     pokemon.weakness = [];
     pokemon.resistance = [];
     pokemon.immunity = [];
@@ -810,12 +810,14 @@ function pokemonData () {
 
             let abilities = res.abilities;
             for(let i = 0; i < abilities.length; i++) {
-                pokemon.abilities.push(abilities[i].ability.name);
+                let fetchedAbility = abilities[i].ability.name;
+                pokemon.abilities.push(fetchedAbility.replaceAll(`-`, ` `));
 
             }
             let moves = res.moves;
             for(let i = 0; i < moves.length; i++) {
-                pokemon.moves.push(moves[i].move.name);
+                let fetchedMoves = moves[i].move.name;
+                pokemon.moves.push(fetchedMoves.replaceAll(`-`, ` `));
             }
 
             uniquePokemonWeaknessFiltered = uniquePokemonWeakness.filter(val => !uniquePokemonResistance.includes(val)); //filters weaknesses for dual types for true weakness
@@ -1105,7 +1107,7 @@ function showDropdownMenu() {
 
 const displayedPokemon = (pokemon) => {
     const pokemonString = pokemon.map((pokemon) => {
-        return `<a href="#" class="dropdown-item">${pokemon.name}</a>`;
+        return `<a href="#" class="dropdown-item">${pokemon.name.charAt(0).toUpperCase() + pokemon.name.substring(1).toLowerCase()}</a>`;
     })
     .join(` `);
     dropDown.innerHTML = pokemonString
@@ -1600,7 +1602,7 @@ function showAbilityMenu() {
   
   const abilityList = (ability) => {
       const abilityString = ability.map((ability) => {
-          return `<a href="#" class="dropdown-item">${ability}</a>`;
+          return `<a href="#" class="dropdown-item">${ability.charAt(0).toUpperCase() + ability.substring(1).toLowerCase()}</a>`;
       })
       .join(` `);
       abilityDropdown.innerHTML = abilityString;
@@ -1649,7 +1651,7 @@ let moves = ``;
 let movePokemon = []
 const moveList = (move) => {
     const moveString = move.map((move) => {
-        return `<a href="#" class="dropdown-item">${move}</a>`;
+        return `<a href="#" class="dropdown-item">${move.charAt(0).toUpperCase() + move.substring(1).toLowerCase()}</a>`;
     })
     .join(` `);
     moveDropdown.innerHTML = moveString;
