@@ -785,7 +785,6 @@ function pokemonData () {
     picture.src = ``;
     picture.alt = ``;
     url += textInput;
-    console.log(url);
     pokemon.weakness = [];
     pokemon.resistance = [];
     pokemon.immunity = [];
@@ -836,8 +835,6 @@ function pokemonData () {
                 pokemonOne.type.push(...pokemon.type);
                 pokemonOne.abilities.push(...pokemon.abilities);
                 pokemonOne.moves.push(...pokemon.moves);
-                console.log(pokemonOne.abilities);
-                console.log(pokemonOne.moves)
             }
             else if (assigned == 2) {
                 pokemonTwo.weakness.length = 0;
@@ -2375,3 +2372,5 @@ pokemonSixMoveFourBar.addEventListener(`keyup`, (e) => {
     });
     moveList(filteredMoves);
 });
+
+fitty(`.dropdown-item`)
