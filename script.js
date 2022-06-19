@@ -1602,7 +1602,12 @@ function showAbilityMenu() {
   
   const abilityList = (ability) => {
       const abilityString = ability.map((ability) => {
-          return `<a href="#" class="dropdown-item">${ability.charAt(0).toUpperCase() + ability.substring(1).toLowerCase()}</a>`;
+        let abilitySplit = ability.split(` `);
+        for (let i = 0; i < abilitySplit.length; i++) {
+            abilitySplit[i] = abilitySplit[i][0].toUpperCase() + abilitySplit[i].substring(1);
+        }
+        let joinedAbility = abilitySplit.join(` `)
+        return `<a href="#" class="dropdown-item">${joinedAbility}</a>`;
       })
       .join(` `);
       abilityDropdown.innerHTML = abilityString;
@@ -1651,7 +1656,12 @@ let moves = ``;
 let movePokemon = []
 const moveList = (move) => {
     const moveString = move.map((move) => {
-        return `<a href="#" class="dropdown-item">${move.charAt(0).toUpperCase() + move.substring(1).toLowerCase()}</a>`;
+        let moveSplit = move.split(` `);
+        for (let i = 0; i < moveSplit.length; i++) {
+            moveSplit[i] = moveSplit[i][0].toUpperCase() + moveSplit[i].substring(1);
+        }
+        let joinedMove = moveSplit.join(` `);
+        return `<a href="#" class="dropdown-item">${joinedMove}</a>`;
     })
     .join(` `);
     moveDropdown.innerHTML = moveString;
