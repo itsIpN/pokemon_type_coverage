@@ -17,70 +17,155 @@
     <section>
         <div class="main">
             <div class="child">
-                <form id="pokemonOne">
-                    <input type="text" name="pokemonOneInputBar" value="" placeholder="Enter text here"  id="pokemonOneInputBar" autocomplete="off">
-                    <input type="submit" name = "pokemonOneSubmitButton" value="Submit" id="pokemonOneSearchButton">
-                </form>
-                <div id="myDropdown1" class="dropdown-content1 dropdown">
-                </div>
-                <div class="grandchild">
+                <div class="pokemonMenu flexbox-item">
+                    <form id="pokemonOne" class="pokemonForm">
+                        <input type="text" name="pokemonOneInputBar" value="" placeholder="Pokemon" class="inputBar" id="pokemonOneInputBar" autocomplete="off">
+                        <input type="submit" name = "pokemonOneSubmitButton" value="Submit" class="submitButton" id="pokemonOneSearchButton">
+                    </form>
+                    <div id="myDropdown1" class="dropdown-content1 dropdown"></div>
+                    <div>
                     <img src="" alt="" id="pokemonOneSprite" class="pokemonPic">
                     <ul id="pokemonOneType"></ul>
+                    </div>
+                </div>
+                <div class="pokemonAbility flexbox-item">
+                    <input type="text" name="pokemonOneAbility" value="" placeholder="Ability" class="abilityBar" id="pokemonOneAbility" autocomplete="off" readonly>
+                    <div id="abilityDropdown1" class="abilityContent1 abilityDropdown"></div>
+                </div>
+                <div class="pokemonMoves flexbox-item">
+                    <input type="text" name="pokemonOneMove1" value="" placeholder="Move 1" class="moveBarBar" id="pokemonOneMove1" autocomplete="off" >
+                    <div id="pokemon1MoveDropdown1" class="pokemon1Move1 moveDropdown"></div>
+                    <input type="text" name="pokemonOneMove2" value="" placeholder="Move 2" class="moveBarBar" id="pokemonOneMove2" autocomplete="off" >
+                    <div id="pokemon1MoveDropdown2" class="pokemon1Move2 moveDropdown"></div>
+                    <input type="text" name="pokemonOneMove3" value="" placeholder="Move 3" class="moveBarBar" id="pokemonOneMove3" autocomplete="off" >
+                    <div id="pokemon1MoveDropdown3" class="pokemon1Move3 moveDropdown"></div>
+                    <input type="text" name="pokemonOneMove4" value="" placeholder="Move 4" class="moveBarBar" id="pokemonOneMove4" autocomplete="off" >
+                    <div id="pokemon1MoveDropdown4" class="pokemon1Move4 moveDropdown"></div>
                 </div>
             </div>
             <div class="child">
-                <form id="pokemonTwo">
-                    <input type="text" name="pokemonTwoInputBar" value="" placeholder="Enter text here"  id="pokemonTwoInputBar" autocomplete="off">
-                    <input type="submit" name = "pokemonTwoSubmitButton" value="Submit" id="pokemonTwoSearchButton">
-                </form>
-                <div id="myDropdown2" class="dropdown-content2 dropdown"></div>
-                <div class="grandchild">
+                <div class="pokemonMenu flexbox-item">
+                    <form id="pokemonTwo">
+                        <input type="text" name="pokemonTwoInputBar" value="" placeholder="Pokemon" class="inputBar" id="pokemonTwoInputBar" autocomplete="off">
+                        <input type="submit" name = "pokemonTwoSubmitButton" value="Submit" id="pokemonTwoSearchButton">
+                    </form>
+                    <div id="myDropdown2" class="dropdown-content2 dropdown"></div>
                     <img src="" alt="" id="pokemonTwoSprite" class="pokemonPic">
                     <ul id="pokemonTwoType"></ul>
                 </div>
+                <div class="pokemonAbility flexbox-item">
+                    <input type="text" name="pokemonTwoAbility" value="" placeholder="Ability" class="abilityBar" id="pokemonTwoAbility" autocomplete="off" readonly>
+                    <div id="abilityDropdown2" class="abilityContent2 abilityDropdown"></div>
+                </div>
+                <div class="pokemonMoves flexbox-item">
+                    <input type="text" name="pokemonTwoMove1" value="" placeholder="Move 1" class="moveBarBar" id="pokemonTwoMove1" autocomplete="off" >
+                    <div id="pokemon2MoveDropdown1" class="pokemon2Move1 moveDropdown"></div>
+                    <input type="text" name="pokemonTwoMove2" value="" placeholder="Move 2" class="moveBarBar" id="pokemonTwoMove2" autocomplete="off" >
+                    <div id="pokemon2MoveDropdown2" class="pokemon2Move2 moveDropdown"></div>
+                    <input type="text" name="pokemonTwoMove3" value="" placeholder="Move 3" class="moveBarBar" id="pokemonTwoMove3" autocomplete="off" >
+                    <div id="pokemon2MoveDropdown3" class="pokemon2Move3 moveDropdown"></div>
+                    <input type="text" name="pokemonTwoMove4" value="" placeholder="Move 4" class="moveBarBar" id="pokemonTwoMove4" autocomplete="off" >
+                    <div id="pokemon2MoveDropdown4" class="pokemon2Move4 moveDropdown"></div>
+                </div>
             </div>
             <div class="child">
-                <form id="pokemonThree">
-                    <input type="text" name="pokemonThreeInputBar" value="" placeholder="Enter text here"  id="pokemonThreeInputBar" autocomplete="off">
-                    <input type="submit" name = "pokemonThreeSubmitButton" value="Submit" id="pokemonThreeSearchButton">
-                </form>
-                <div id="myDropdown3" class="dropdown-content3 dropdown"></div>
-                <div class="grandchild">
+                <div class="pokemonMenu flexbox-item">
+                    <form id="pokemonThree">
+                        <input type="text" name="pokemonThreeInputBar" value="" placeholder="Pokemon" class="inputBar" id="pokemonThreeInputBar" autocomplete="off">
+                        <input type="submit" name = "pokemonThreeSubmitButton" value="Submit" id="pokemonThreeSearchButton">
+                    </form>
+                    <div id="myDropdown3" class="dropdown-content3 dropdown"></div>
                     <img src="" alt="" id="pokemonThreeSprite" class="pokemonPic">
                     <ul id="pokemonThreeType"></ul>
                 </div>
+                <div class="pokemonAbility flexbox-item">
+                    <input type="text" name="pokemonThreeAbility" value="" placeholder="Ability" class="abilityBar" id="pokemonThreeAbility" autocomplete="off" readonly>
+                    <div id="abilityDropdown3" class="abilityContent3 abilityDropdown"></div>
+                </div>
+                <div class="pokemonMoves flexbox-item">
+                    <input type="text" name="pokemonThreeMove1" value="" placeholder="Move 1" class="moveBarBar" id="pokemonThreeMove1" autocomplete="off" >
+                    <div id="pokemon3MoveDropdown1" class="pokemon3Move1 moveDropdown"></div>
+                    <input type="text" name="pokemonThreeMove2" value="" placeholder="Move 2" class="moveBarBar" id="pokemonThreeMove2" autocomplete="off" >
+                    <div id="pokemon3MoveDropdown2" class="pokemon3Move2 moveDropdown"></div>
+                    <input type="text" name="pokemonThreeMove3" value="" placeholder="Move 3" class="moveBarBar" id="pokemonThreeMove3" autocomplete="off" >
+                    <div id="pokemon3MoveDropdown3" class="pokemon3Move3 moveDropdown"></div>
+                    <input type="text" name="pokemonThreeMove4" value="" placeholder="Move 4" class="moveBarBar" id="pokemonThreeMove4" autocomplete="off" >
+                    <div id="pokemon3MoveDropdown4" class="pokemon3Move4 moveDropdown"></div>
+                </div>
             </div>
             <div class="child">
-                <form id="pokemonFour">
-                    <input type="text" name="pokemonFourInputBar" value="" placeholder="Enter text here"  id="pokemonFourInputBar" autocomplete="off">
-                    <input type="submit" name = "pokemonFourSubmitButton" value="Submit" id="pokemonFourSearchButton">
-                </form>
-                <div id="myDropdown4" class="dropdown-content4 dropdown"></div>
-                <div class="grandchild">
+                <div class="pokemonMenu flexbox-item">
+                    <form id="pokemonFour">
+                        <input type="text" name="pokemonFourInputBar" value="" placeholder="Pokemon" class="inputBar" id="pokemonFourInputBar" autocomplete="off">
+                        <input type="submit" name = "pokemonFourSubmitButton" value="Submit" id="pokemonFourSearchButton">
+                    </form>
+                    <div id="myDropdown4" class="dropdown-content4 dropdown"></div>
                     <img src="" alt="" id="pokemonFourSprite" class="pokemonPic">
                     <ul id="pokemonFourType"></ul>
                 </div>
-            </div>
-            <div class="child">
-                <form id="pokemonFive">
-                    <input type="text" name="pokemonFiveInputBar" value="" placeholder="Enter text here"  id="pokemonFiveInputBar" autocomplete="off">
-                    <input type="submit" name = "pokemonFiveSubmitButton" value="Submit" id="pokemonFiveSearchButton">
-                </form>
-                <div id="myDropdown5" class="dropdown-content5 dropdown"></div>
-                <div class="grandchild">
-                    <img src="" alt="" id="pokemonFiveSprite" class="pokemonPic">
-                    <ul id="pokemonFiveType"></ul>
+                <div class="pokemonAbility flexbox-item">
+                    <input type="text" name="pokemonFourAbility" value="" placeholder="Ability" class="abilityBar" id="pokemonFourAbility" autocomplete="off" readonly>
+                    <div id="abilityDropdown4" class="abilityContent4 abilityDropdown"></div>
+                </div>
+                <div class="pokemonMoves flexbox-item">
+                    <input type="text" name="pokemonFourMove1" value="" placeholder="Move 1" class="moveBarBar" id="pokemonFourMove1" autocomplete="off" >
+                    <div id="pokemon4MoveDropdown1" class="pokemon4Move1 moveDropdown"></div>
+                    <input type="text" name="pokemonFourMove2" value="" placeholder="Move 2" class="moveBarBar" id="pokemonFourMove2" autocomplete="off" >
+                    <div id="pokemon4MoveDropdown2" class="pokemon4Move2 moveDropdown"></div>
+                    <input type="text" name="pokemonFourMove3" value="" placeholder="Move 3" class="moveBarBar" id="pokemonFourMove3" autocomplete="off" >
+                    <div id="pokemon4MoveDropdown3" class="pokemon4Move3 moveDropdown"></div>
+                    <input type="text" name="pokemonFourMove4" value="" placeholder="Move 4" class="moveBarBar" id="pokemonFourMove4" autocomplete="off" >
+                    <div id="pokemon4MoveDropdown4" class="pokemon4Move4 moveDropdown"></div>
                 </div>
             </div>
             <div class="child">
-                <form id="pokemonSix">
-                    <input type="text" name="pokemonSixInputBar" value="" placeholder="Enter text here"  id="pokemonSixInputBar" autocomplete="off">
-                    <input type="submit" name = "pokemonSixSubmitButton" value="Submit" id="pokemonSixSearchButton">
-                </form>
-                <div id="myDropdown6" class="dropdown-content6 dropdown"></div>
-                <div class="grandchild">
+                <div class="pokemonMenu flexbox-item">
+                    <form id="pokemonFive">
+                        <input type="text" name="pokemonFiveInputBar" value="" placeholder="Pokemon" class="inputBar" id="pokemonFiveInputBar" autocomplete="off">
+                        <input type="submit" name = "pokemonFiveSubmitButton" value="Submit" id="pokemonFiveSearchButton">
+                    </form>
+                    <div id="myDropdown5" class="dropdown-content5 dropdown"></div>
+                    <img src="" alt="" id="pokemonFiveSprite" class="pokemonPic">grand
+                    <ul id="pokemonFiveType"></ul>
+                </div>
+                <div class="pokemonAbility flexbox-item">
+                    <input type="text" name="pokemonFiveAbility" value="" placeholder="Ability" class="abilityBar" id="pokemonFiveAbility" autocomplete="off" readonly>
+                    <div id="abilityDropdown5" class="abilityContent5 abilityDropdown"></div>
+                </div>
+                <div class="pokemonMoves flexbox-item">
+                    <input type="text" name="pokemonFiveMove1" value="" placeholder="Move 1" class="moveBarBar" id="pokemonFiveMove1" autocomplete="off" >
+                    <div id="pokemon5MoveDropdown1" class="pokemon5Move1 moveDropdown"></div>
+                    <input type="text" name="pokemonFiveMove2" value="" placeholder="Move 2" class="moveBarBar" id="pokemonFiveMove2" autocomplete="off" >
+                    <div id="pokemon5MoveDropdown2" class="pokemon5Move2 moveDropdown"></div>
+                    <input type="text" name="pokemonFiveMove3" value="" placeholder="Move 3" class="moveBarBar" id="pokemonFiveMove3" autocomplete="off" >
+                    <div id="pokemon5MoveDropdown3" class="pokemon5Move3 moveDropdown"></div>
+                    <input type="text" name="pokemonFiveMove4" value="" placeholder="Move 4" class="moveBarBar" id="pokemonFiveMove4" autocomplete="off" >
+                    <div id="pokemon5MoveDropdown4" class="pokemon5Move4 moveDropdown"></div>
+                </div>
+            </div>
+            <div class="child">
+                <div class="pokemonMenu flexbox-item">
+                    <form id="pokemonSix">
+                        <input type="text" name="pokemonSixInputBar" value="" placeholder="Pokemon" class="inputBar" id="pokemonSixInputBar" autocomplete="off">
+                        <input type="submit" name = "pokemonSixSubmitButton" value="Submit" id="pokemonSixSearchButton">
+                    </form>
+                    <div id="myDropdown6" class="dropdown-content6 dropdown"></div>
                     <img src="" alt="" id="pokemonSixSprite" class="pokemonPic">
                     <ul id="pokemonSixType"></ul>
+                </div>
+                <div class="pokemonAbility flexbox-item">
+                    <input type="text" name="pokemonSixAbility" value="" placeholder="Ability" class="abilityBar" id="pokemonSixAbility" autocomplete="off" readonly>
+                    <div id="abilityDropdown6" class="abilityContent6 abilityDropdown"></div>
+                </div>
+                <div class="pokemonMoves flexbox-item">
+                    <input type="text" name="pokemonSixMove1" value="" placeholder="Move 1" class="moveBarBar" id="pokemonSixMove1" autocomplete="off" >
+                    <div id="pokemon6MoveDropdown1" class="pokemon6Move1 moveDropdown"></div>
+                    <input type="text" name="pokemonSixMove2" value="" placeholder="Move 2" class="moveBarBar" id="pokemonSixMove2" autocomplete="off" >
+                    <div id="pokemon6MoveDropdown2" class="pokemon6Move2 moveDropdown"></div>
+                    <input type="text" name="pokemonSixMove3" value="" placeholder="Move 3" class="moveBarBar" id="pokemonSixMove3" autocomplete="off" >
+                    <div id="pokemon6MoveDropdown3" class="pokemon6Move3 moveDropdown"></div>
+                    <input type="text" name="pokemonSixMove4" value="" placeholder="Move 4" class="moveBarBar" id="pokemonSixMove4" autocomplete="off" >
+                    <div id="pokemon6MoveDropdown4" class="pokemon6Move4 moveDropdown"></div>
                 </div>
             </div>
         </div>
@@ -88,9 +173,11 @@
     <section class="calculator">
         <button type="button" id="calculateCoverage">Test Coverage!</button>
         <h2 id="coverageStatement"></h2>
+        <ul id="typeCoverage"></ul>
     </section>
     <section class="footer">
         <a href="https://www.freepik.com/vectors/dark-abstract">Dark abstract vector created by rawpixel.com - www.freepik.com</a>
+
     </section>
 </body>
 </html>
