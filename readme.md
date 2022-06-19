@@ -11,12 +11,20 @@ Description: a basic pokemon team builder that allows you to select 6 pokemon fo
 - PokeAPI
 
 # Screenshots
+![complete-coverage](./screenshots/complete.png)
+- complete coverage
 
+![incomplete-coverage](./screenshots/incomplete.png)
+- incomplete coverage
 # Getting Started
+[Click here](https://pokemon-team-type-coverage-evaluator.netlify.app/) to try it out!
 
 # Future Enhancements
 - Capitalize all first letters and replace hyphens with spaces
 - Evaluate move types and show what type of moves are lacking for attacking type coverage
 - Use abilities as part of evaluation of type coverage (immunity)
+- Allow addition of items
+- Allow EV modification
+- Show stats
 - Assign roles to pokemon based on common roles in competitive
 - Assign roles based on moves that is picked (e.g. Rapid Spinner, Set Ups / Dedicated Leads)
