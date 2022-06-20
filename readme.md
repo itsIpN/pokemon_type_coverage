@@ -21,7 +21,6 @@ Description: a basic pokemon team builder that allows you to select 6 pokemon fo
 
 # Future Enhancements
 - Evaluate move types and show what type of moves are lacking for attacking type coverage
-- Use abilities as part of evaluation of type coverage (immunity)
 - Allow addition of items
 - Allow EV modification
 - Show stats

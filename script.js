@@ -925,8 +925,29 @@ function pokemonData () {
 function calculateCoverage() {
     let coverageStatement = document.querySelector(`#coverageStatement`);
     let coverageType = document.querySelector(`#typeCoverage`)
+    let abilityOne = document.querySelector(`#pokemonOneAbility`).value;
+    let abilityTwo = document.querySelector(`#pokemonTwoAbility`).value;
+    let abilityThree = document.querySelector(`#pokemonThreeAbility`).value;
+    let abilityFour = document.querySelector(`#pokemonFourAbility`).value;
+    let abilityFive = document.querySelector(`#pokemonFiveAbility`).value;
+    let abilitySix = document.querySelector(`#pokemonSixAbility`).value;
     let fullWeakness = pokemonOne.weakness.concat(pokemonTwo.weakness, pokemonThree.weakness, pokemonFour.weakness, pokemonFive.weakness, pokemonSix.weakness);
     let fullResistance = pokemonOne.resistance.concat(pokemonOne.immunity, pokemonTwo.resistance, pokemonTwo.immunity, pokemonThree.resistance, pokemonThree.immunity, pokemonFour.resistance, pokemonFour.immunity, pokemonFive.resistance, pokemonFive.immunity, pokemonSix.resistance, pokemonSix.immunity);
+    if (abilityOne == `Water Absorb` || abilityTwo == `Water Absorb` || abilityThree == `Water Absorb` || abilityFour == `Water Absorb` || abilityFive == `Water Absorb` || abilitySix == `Water Absorb` || abilityOne == `Storm Drain` || abilityTwo == `Storm Drain` || abilityThree == `Storm Drain` || abilityFour == `Storm Drain` || abilityFive == `Storm Drain` || abilitySix == `Storm Drain`){
+        fullResistance.push(`water`);
+    }
+    if (abilityOne == `Volt Absorb` || abilityTwo == `Volt Absorb` || abilityThree == `Volt Absorb` || abilityFour == `Volt Absorb` || abilityFive == `Volt Absorb` || abilitySix == `Volt Absorb` || abilityOne == `Motor Drive` || abilityTwo == `Motor Drive` || abilityThree == `Motor Drive` || abilityFour == `Motor Drive` || abilityFive == `Motor Drive` || abilitySix == `Motor Drive` || abilityOne == `Lightning Rod` || abilityTwo == `Lightning Rod` || abilityThree == `Lightning Rod` || abilityFour == `Lightning Rod` || abilityFive == `Lightning Rod` || abilitySix == `Lightning Rod`){
+        fullResistance.push(`electric`);
+    }
+    if (abilityOne == `Flash Fire` || abilityTwo == `Flash Fire` || abilityThree == `Flash Fire` || abilityFour == `Flash Fire` || abilityFive == `Flash Fire` || abilitySix == `Flash Fire`){
+        fullResistance.push(`fire`);
+    }
+    if (abilityOne == `Sap Sipper` || abilityTwo == `Sap Sipper` || abilityThree == `Sap Sipper` || abilityFour == `Sap Sipper` || abilityFive == `Sap Sipper` || abilitySix == `Sap Sipper`){
+        fullResistance.push(`grass`);
+    }
+    if (abilityOne == `Levitate` || abilityTwo == `Levitate` || abilityThree == `Levitate` || abilityFour == `Levitate` || abilityFive == `Levitate` || abilitySix == `Levitate`){
+        fullResistance.push(`ground`);
+    }
     let fullPokemonWeakness = fullWeakness.filter((c, index) => { //removes duplicates from weakness from all pokemon together
         return fullWeakness.indexOf(c) === index;
     });
