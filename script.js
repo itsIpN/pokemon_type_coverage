@@ -916,7 +916,56 @@ function pokemonData () {
             picture.alt = textInput;
             picture.src = res.sprites.other[`official-artwork`].front_default;
         })
-        .catch(err => console.log(`something went wrong...`, err))
+        .catch(err => {
+            if(assigned == 1) {
+                pokemonOne.weakness.length = 0;
+                pokemonOne.resistance.length = 0;
+                pokemonOne.immunity.length = 0;
+                pokemonOne.type.length = 0;
+                pokemonOne.abilities.length = 0;
+                pokemonOne.moves.length = 0;
+            }
+            else if (assigned == 2) {
+                pokemonTwo.weakness.length = 0;
+                pokemonTwo.resistance.length = 0;
+                pokemonTwo.immunity.length = 0;
+                pokemonTwo.type.length = 0;
+                pokemonTwo.abilities.length = 0;
+                pokemonTwo.moves.length = 0;
+            }
+            else if (assigned == 3) {
+                pokemonThree.weakness.length = 0;
+                pokemonThree.resistance.length = 0;
+                pokemonThree.immunity.length = 0;
+                pokemonThree.type.length = 0;
+                pokemonThree.abilities.length = 0;
+                pokemonThree.moves.length = 0;
+            }
+            else if (assigned == 4) {
+                pokemonFour.weakness.length = 0;
+                pokemonFour.resistance.length = 0;
+                pokemonFour.immunity.length = 0;
+                pokemonFour.type.length = 0;
+                pokemonFour.abilities.length = 0;
+                pokemonFour.moves.length = 0;
+            }
+            else if (assigned == 5) {
+                pokemonFive.weakness.length = 0;
+                pokemonFive.resistance.length = 0;
+                pokemonFive.immunity.length = 0;
+                pokemonFive.type.length = 0;
+                pokemonFive.abilities.length = 0;
+                pokemonFive.moves.length = 0;
+            }
+            else if (assigned == 6) {
+                pokemonSix.weakness.length = 0;
+                pokemonSix.resistance.length = 0;
+                pokemonSix.immunity.length = 0;
+                pokemonSix.type.length = 0;
+                pokemonSix.abilities.length = 0;
+                pokemonSix.moves.length = 0;
+            }
+            console.log(`something went wrong...`, err)})
         .finally(() => console.log("request was made!"));
   }
 
